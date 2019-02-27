@@ -1,0 +1,11 @@
+name: jackson-demo
+generator: static
+path: "./manifests"
+subcomponents:
+- name: jackson-api
+  source: "./jackson-api"
+- name: jackson-ui
+  source: "./jackson-ui "
+# - name: "cloud-native"
+#   source: "https://github.com/timfpark/fabrikate-cloud-native"
+#   method: "git"

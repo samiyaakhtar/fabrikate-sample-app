@@ -1,0 +1,3 @@
+name: "ui"
+generator: "helm"
+path: "./spring-boot-app-ui"
