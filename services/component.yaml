@@ -1,0 +1,6 @@
+name: jackson
+# generator: static
+# path: "./manifests"
+subcomponents:
+- name: project-jackson
+  source: "./project-jackson"

@@ -2,15 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.fullnameOverride }}
+  labels:
+    app: simple-jackson-REPLACEME
 spec:
   selector:
     matchLabels:
       app: {{ .Values.appName }}
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate #Parameterize?
   template:
     metadata:
       labels:
         app: {{ .Values.appName }}
+        version: {{ .Values.version }}
       annotations:
         prometheus.io/path: '/actuator/prometheus'
         prometheus.io/port: '8080'

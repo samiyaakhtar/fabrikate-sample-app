@@ -1,0 +1,15 @@
+name: "api"
+# generator: "helm"
+# path: "./spring-boot-app-api"
+
+# name: "simple-service"
+# generator: "helm"
+# path: "../service-chart"
+subcomponents:
+# - name: "configmap"
+#   generator: "static"
+#   path: "./manifests"
+- name: "canary"
+  source: "./canary"
+# - name: "stable"
+#   source: "./stable"

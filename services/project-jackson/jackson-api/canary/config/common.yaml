@@ -1,0 +1,7 @@
+config:
+  image: 
+    repository: "andrebriggs/api-jackson"
+    tag: v1
+  replicas: 1
+  version: canary
+  fullnameOverride: api-deploy-canary
