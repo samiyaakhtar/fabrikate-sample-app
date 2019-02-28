@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Values.serviceName }}
+spec:
+  hosts:
+    - {{ .Values.serviceName }}
+  http:
+  - route:
+    - destination:
+        host: {{ .Values.serviceName }}
+        subset: stable
+      weight: 90
+    - destination:
+        host: {{ .Values.serviceName }}
+        subset: canary
+      weight: 10

@@ -1,0 +1,8 @@
+name: deployment-chart
+description: Deployment chart for a particular flight of a microservice
+version: 0.1.0
+sources:
+- https://github.com/timfpark/fabrikate-multicluster
+maintainers:
+- name: timfpark
+  email: timfpark@gmail.com
