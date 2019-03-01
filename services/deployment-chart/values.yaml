@@ -1,3 +1,0 @@
-namespace: services
-imagePullPolicy: "Always"
-imagePullSecrets: acr-tpark
