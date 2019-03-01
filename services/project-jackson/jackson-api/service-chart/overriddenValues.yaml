@@ -1,0 +1,6 @@
+appName: spring-boot-api
+fullnameOverride: spring-boot-api
+service:
+  labelName: jackson
+  name: jackson-api
+  port: 8080

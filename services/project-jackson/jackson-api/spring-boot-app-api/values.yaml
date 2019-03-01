@@ -10,8 +10,8 @@ image:
   pullPolicy: Always
 
 nameOverride: ""
-fullnameOverride: spring-boot-api
-appName: spring-boot-api
+# fullnameOverride: spring-boot-api
+# appName: spring-boot-api
 abstractName: jackson
 
 service:

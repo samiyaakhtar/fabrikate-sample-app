@@ -1,4 +1,4 @@
-name: jackson
+name: services
 # generator: static
 # path: "./manifests"
 subcomponents:

@@ -1,6 +1,6 @@
-fullnameOverride: api-deploy-canary
+fullnameOverride: api-deploy-stable
 image:
-  repository: tpark.azurecr.io/tpark/simple-service
-  tag: 20181118T195312Z
+  repository: andrebriggs/api-jackson
+  tag: v1
 replicas: 1
-version: canary
+version: stable

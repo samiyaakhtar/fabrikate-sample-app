@@ -1,0 +1,14 @@
+config:
+  service:
+      name: jackson-api
+      port: 8080
+      labelName: jackson
+  fullnameOverride: spring-boot-api
+  appName: spring-boot-api
+# subcomponents:
+#   canary:
+#     config:
+#       serviceName: "simple-service"
+#   stable:
+#     config:
+#       serviceName: "simple-service"

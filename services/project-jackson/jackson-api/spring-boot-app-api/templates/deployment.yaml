@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.fullnameOverride }}
   labels:
-    app: simple-jackson-REPLACEME
+    app: {{ .Values.appName }}
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
         app: {{ .Values.appName }}
         version: {{ .Values.version }}
       annotations:
-        prometheus.io/path: '/actuator/prometheus'
+        prometheus.io/path: '/api/actuator/prometheus'
         prometheus.io/port: '8080'
         prometheus.io/scrape: 'true'
     spec:
@@ -30,6 +30,8 @@ spec:
           ports:
             {{- toYaml .Values.ports | nindent 10 }}
           env:
+          - name: SERVER_SERVLET_CONTEXT_PATH
+            value: "/api"
           - name: spring.profiles.active
             value: {{ .Values.springProfilesActive | quote}}
           - name: DB_CONNSTR # a mongo database connection string (ex: mongodb://db.com/myDb)
