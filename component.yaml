@@ -4,6 +4,6 @@ name: sample-app
 subcomponents:
 - name: services
   source: "./services"
-- name: "cloud-native"
-  source: "https://github.com/timfpark/fabrikate-cloud-native"
-  method: "git"
+# - name: "cloud-native"
+#   source: "https://github.com/timfpark/fabrikate-cloud-native"
+#   method: "git"

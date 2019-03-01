@@ -52,11 +52,11 @@ spec:
         subset: stable
         port: 
           number: {{ .Values.service.port }}
-      weight: 90
+      weight: {{ .Values.service.stableWeight}}
     - destination:
         host: {{ .Values.service.name }}
         subset: canary
         port: 
           number: {{ .Values.service.port }}
-      weight: 10
+      weight: {{ .Values.service.canaryWeight}}
 {{- end }}
