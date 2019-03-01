@@ -1,6 +1,0 @@
-fullnameOverride: api-deploy-stable
-image:
-  repository: andrebriggs/api-jackson
-  tag: v1
-replicas: 1
-version: stable
