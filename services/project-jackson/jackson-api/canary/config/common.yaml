@@ -1,8 +1,6 @@
 config:
-  image: 
-    repository: "andrebriggs/api-jackson"
-    tag: v1
+  image:
+    repository: mtarng/jackson-api
+    tag: v1.1-peoplehobby
   replicas: 1
   version: canary
-  fullnameOverride: api-deploy-canary
-  appName: spring-boot-api

@@ -1,3 +1,6 @@
 name: "ui"
 generator: "helm"
-path: "./spring-boot-app-ui"
+path: "../service-chart"
+subcomponents:
+- name: "stable"
+  source: "./stable"

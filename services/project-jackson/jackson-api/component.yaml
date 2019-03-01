@@ -1,14 +1,11 @@
 name: "api"
-# generator: "helm"
-# path: "./spring-boot-app-api"
 generator: "helm"
-path: "./service-chart"
+path: "../service-chart"
 subcomponents:
-# - name: "configmap"
-#   generator: "static"
-#   path: "./manifests"
-#- name: "service"
 - name: "canary"
   source: "./canary"
 - name: "stable"
   source: "./stable"
+# - name: istio
+#   generator: "helm"
+#   path: "../istio-chart"

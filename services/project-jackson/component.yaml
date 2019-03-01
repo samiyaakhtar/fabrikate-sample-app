@@ -4,5 +4,5 @@ path: "./manifests"
 subcomponents:
 - name: jackson-api
   source: "./jackson-api"
-# - name: jackson-ui
-#   source: "./jackson-ui"
+- name: jackson-ui
+  source: "./jackson-ui"
