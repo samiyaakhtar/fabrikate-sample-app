@@ -6,6 +6,3 @@ subcomponents:
   source: "./canary"
 - name: "stable"
   source: "./stable"
-# - name: istio
-#   generator: "helm"
-#   path: "../istio-chart"
