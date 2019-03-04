@@ -3,8 +3,8 @@ config:
       name: jackson-api
       port: 8080
       labelName: jackson
-      canaryWeight: 20
-      stableWeight: 80
+      canaryWeight: 10
+      stableWeight: 90
   appName: spring-boot-api
   enableVirtualService: true
   enableDestinationRule: true
