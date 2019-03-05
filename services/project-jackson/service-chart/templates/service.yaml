@@ -20,7 +20,7 @@ metadata:
   labels:
     app: {{ .Values.service.labelName }}
 spec:
-  host: {{ .Values.service.name }}
+  host: "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
   subsets:
   - name: stable
     labels:
@@ -44,17 +44,17 @@ spec:
     # Services in Kubernetes expose their endpoint using a common DNS pattern.
     # It looks like: <Service Name>.<Namespace Name>.svc.cluster.local
     # if not a FQDN then Istio assumes default namespace
-    - {{ .Values.service.name }}
+    - "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
   http:
   - route:
     - destination:
-        host: {{ .Values.service.name }}
+        host: "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
         subset: stable
         port: 
           number: {{ .Values.service.port }}
       weight: {{ .Values.service.stableWeight}}
     - destination:
-        host: {{ .Values.service.name }}
+        host: "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
         subset: canary
         port: 
           number: {{ .Values.service.port }}

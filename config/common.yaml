@@ -1,0 +1,11 @@
+  config:
+  subcomponents:
+    infra:
+        subcomponents:
+            fabrikate-cloud-native:
+                subcomponents:
+                    prometheus-grafana:
+                        subcomponents:
+                            grafana:
+                                config:
+                                    adminPassword: "[test]"

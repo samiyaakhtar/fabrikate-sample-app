@@ -1,6 +1,7 @@
 config:
   service:
       name: jackson-api
+      namespace: default #Should share the namespace name one level above
       port: 8080
       labelName: jackson
       canaryWeight: 10
