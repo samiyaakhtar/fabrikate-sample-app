@@ -52,11 +52,11 @@ spec:
         subset: stable
         port: 
           number: {{ .Values.service.port }}
-      weight: {{ .Values.service.stableWeight}}
+      weight: {{ if .Values.service.canaryWeight }} {{ .Values.service.stableWeight}} {{ else }} 100 {{ end }}
     - destination:
         host: "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
         subset: canary
         port: 
           number: {{ .Values.service.port }}
-      weight: {{ .Values.service.canaryWeight}}
+      weight: {{ if .Values.service.canaryWeight }} {{ .Values.service.canaryWeight}} {{ else }} 0 {{ end }}
 {{- end }}
