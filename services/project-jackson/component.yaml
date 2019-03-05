@@ -6,6 +6,6 @@ subcomponents:
     source: "./jackson-api"
   - name: jackson-ui
     source: "./jackson-ui"
-  - name: jackson-istio
-    generator: static
-    path: "./jackson-istio"
+  # - name: jackson-istio
+  #   generator: static
+  #   path: "./jackson-istio"
