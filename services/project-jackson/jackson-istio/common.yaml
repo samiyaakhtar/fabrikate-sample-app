@@ -73,13 +73,13 @@ spec:
               number: 8080
             host: jackson-api.default.svc.cluster.local
             subset: stable
-          weight: 90
+          weight: 50
         - destination:
             port:
               number: 8080
             host: jackson-api.default.svc.cluster.local
             subset: canary
-          weight: 10
+          weight: 50
     - route: # This rule will pickup all other requests because it doesn't have a `match`
         - destination:
             port:
