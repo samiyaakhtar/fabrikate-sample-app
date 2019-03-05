@@ -6,5 +6,5 @@ subcomponents:
     source: "./jackson-api"
   - name: jackson-ui
     source: "./jackson-ui"
-  # - name: jackson-istio
-  #   source: "./jackson-istio"
+  - name: jackson-istio
+    source: "./jackson-istio"
