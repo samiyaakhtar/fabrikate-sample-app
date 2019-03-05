@@ -8,4 +8,4 @@ subcomponents:
     source: "./jackson-ui"
   - name: jackson-istio
     generator: static
-    source: "./jackson-istio"
+    path: "./jackson-istio"
