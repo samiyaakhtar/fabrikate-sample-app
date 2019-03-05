@@ -4,7 +4,7 @@ This repository is a high level deployment defintion for Kubernetes. The repo co
 
 ## Features
 * Istio based canary deployment configuration of the Project Jackson API microservice
-* Mulicluster support
+* Multicluster support
 
 ## How to adjust the canary deployment traffic weights
 
