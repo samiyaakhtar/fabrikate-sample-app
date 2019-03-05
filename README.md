@@ -27,3 +27,6 @@ config:
 1. Run Fabrikate at the root level of this repository
    1. `fab install .`
    2. `fab generate $ENV_CONFIG_NAME`
+
+## Example of manifested YAML
+This repository is linked to a manifest repository that has the output YAML [here](https://dev.azure.com/abrig/bedrock_gitops/_git/sample_app_manifests?path=%2F&version=GBmaster)
