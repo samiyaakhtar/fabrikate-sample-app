@@ -6,35 +6,35 @@
 # Known Issues:
 # - Ensure your Istio Gateway is using the correct selector for the Istio IngressGateway: (Gateways `spec.selector.istio` must match IstioGateway's `metadata.labels.istio`); As of v1.0.5, the included helm charts generate a mismatch.
 
----
-# Generate a ClusterIP for the API
-apiVersion: v1
-kind: Service
-metadata:
-  name: jackson-api
-  labels:
-    app: jackson
-spec:
-  selector:
-    app: spring-boot-api
-  ports:
-    - name: http
-      port: 8080
+# ---
+# # Generate a ClusterIP for the API
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: jackson-api
+#   labels:
+#     app: jackson
+# spec:
+#   selector:
+#     app: spring-boot-api
+#   ports:
+#     - name: http
+#       port: 8080
 
----
-# Generate a ClusterIP for the UI
-apiVersion: v1
-kind: Service
-metadata:
-  name: jackson-ui
-  labels:
-    app: jackson
-spec:
-  selector:
-    app: spring-boot-ui
-  ports:
-    - protocol: TCP
-      port: 8080
+# ---
+# # Generate a ClusterIP for the UI
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: jackson-ui
+#   labels:
+#     app: jackson
+# spec:
+#   selector:
+#     app: spring-boot-ui
+#   ports:
+#     - protocol: TCP
+#       port: 8080
 
 ---
 apiVersion: networking.istio.io/v1alpha3

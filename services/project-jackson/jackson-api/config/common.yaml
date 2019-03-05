@@ -6,8 +6,8 @@ config:
     canaryWeight: 10
     stableWeight: 90
   appName: spring-boot-api
-  enableVirtualService: true
-  enableDestinationRule: true
+  enableVirtualService: false # temp disable for demo
+  enableDestinationRule: false # temp disable for demo
 subcomponents:
   canary:
     config:
