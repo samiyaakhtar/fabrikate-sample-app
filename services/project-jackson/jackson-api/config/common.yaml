@@ -1,13 +1,14 @@
 config:
   service:
     name: jackson-api
+    namespace: default
     port: 8080
     labelName: jackson
     canaryWeight: 10
     stableWeight: 90
   appName: spring-boot-api
-  enableVirtualService: false # temp disable for demo
-  enableDestinationRule: false # temp disable for demo
+  enableVirtualService: true
+  enableDestinationRule: true
 subcomponents:
   canary:
     config:
