@@ -10,6 +10,18 @@ This repository is a high level deployment defintion for Kubernetes. The repo co
 
 1. Navigate to the [common.yaml](services/project-jackson/jackson-api/config/common.yaml) file. 
 2. Modifiy the `stableWeight` and `canaryWeight` values. (Below sure they total to 100)
+<pre>
+config:
+  service:
+      name: jackson-api
+      port: 8080
+      labelName: jackson
+      canaryWeight: <b>10</b>
+      stableWeight: <b>90</b>
+  appName: spring-boot-api
+  enableVirtualService: true
+  enableDestinationRule: true
+</pre>
 
 ## How to run Fabrikate on this repository
 1. Run Fabrikate at the root level of this repository
