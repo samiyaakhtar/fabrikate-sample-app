@@ -47,13 +47,7 @@ spec:
     # - "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
     - "*"
   http:
-  -
-    {{ if .Values.service.match.uri.prefix }}
-    match:
-    - uri:
-        prefix:  {{ .Values.service.match.uri.prefix }}
-    {{end}}
-    route:
+  - route:
     - destination:
         host: "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
         subset: stable
@@ -66,4 +60,9 @@ spec:
         port: 
           number: {{ .Values.service.port }}
       weight: {{ if .Values.service.canaryWeight }} {{ .Values.service.canaryWeight}} {{ else }} 0 {{ end }}
+    {{ if .Values.service.match.uri.prefix }}
+    match:
+    - uri:
+        prefix:  {{ .Values.service.match.uri.prefix }}
+    {{end}}
 {{- end }}
