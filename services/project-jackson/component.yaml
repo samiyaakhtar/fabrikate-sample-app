@@ -7,4 +7,5 @@ subcomponents:
   - name: jackson-ui
     source: "./jackson-ui"
   - name: jackson-istio
+    generator: static
     source: "./jackson-istio"
