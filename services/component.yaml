@@ -2,5 +2,5 @@ name: services
 # generator: static
 # path: "./manifests"
 subcomponents:
-- name: project-jackson
-  source: "./project-jackson"
+  - name: project-jackson
+    source: "./project-jackson"

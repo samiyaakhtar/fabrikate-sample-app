@@ -2,9 +2,9 @@ name: project-jackson
 generator: static
 path: "./manifests"
 subcomponents:
-- name: jackson-api
-  source: "./jackson-api"
-- name: jackson-ui
-  source: "./jackson-ui"
-- name: jackson-istio
-  source: "./jackson-istio"
+  - name: jackson-api
+    source: "./jackson-api"
+  - name: jackson-ui
+    source: "./jackson-ui"
+  # - name: jackson-istio
+  #   source: "./jackson-istio"

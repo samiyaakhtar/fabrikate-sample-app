@@ -1,8 +1,8 @@
 config:
   service:
-      name: jackson-ui
-      port: 8080
-      labelName: jackson
+    name: jackson-ui
+    port: 8080
+    labelName: jackson
   fullnameOverride: spring-boot-ui
   appName: spring-boot-ui
   image:
