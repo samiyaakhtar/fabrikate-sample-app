@@ -62,5 +62,3 @@ spec:
             value: {{ .Values.jaegerAgentHost | quote}}
           - name: JAEGER_AGENT_PORT
             value: {{ .Values.jaegerAgentPort | quote }}
-          imagePullSecrets:
-          - name: {{ .Values.imagePullSecret }} # Must be created and configured into kubectl

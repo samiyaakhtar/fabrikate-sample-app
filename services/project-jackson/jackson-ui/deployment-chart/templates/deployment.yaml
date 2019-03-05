@@ -20,5 +20,3 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           ports:
             {{- toYaml .Values.ports | nindent 10 }}
-          imagePullSecrets:
-          - name: {{ .Values.imagePullSecret }} # Must be created and configured into kubectl
