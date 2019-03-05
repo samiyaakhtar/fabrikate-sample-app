@@ -8,7 +8,7 @@ config:
   image:
     repository: mtarng/jackson-ui
     tag: v1.0
-  enableVirtualService: false
+  enableVirtualService: true
   enableDestinationRule: false
 # subcomponents:
 #   canary:
