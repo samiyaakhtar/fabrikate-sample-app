@@ -37,6 +37,21 @@ spec:
       port: 8080
 
 ---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: jackson-api-destination
+spec:
+  host: jackson-api.default.svc.cluster.local
+  subsets:
+    - name: stable
+      labels:
+        version: stable
+    - name: canary
+      labels:
+        version: canary
+
+---
 # Add routing rules for the existing Gateway included with Istio
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -57,6 +72,14 @@ spec:
             port:
               number: 8080
             host: jackson-api.default.svc.cluster.local
+            subset: stable
+          weight: 90
+        - destination:
+            port:
+              number: 8080
+            host: jackson-api.default.svc.cluster.local
+            subset: canary
+          weight: 10
     - route: # This rule will pickup all other requests because it doesn't have a `match`
         - destination:
             port:
