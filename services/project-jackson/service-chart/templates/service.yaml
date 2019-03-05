@@ -44,10 +44,16 @@ spec:
     # Services in Kubernetes expose their endpoint using a common DNS pattern.
     # It looks like: <Service Name>.<Namespace Name>.svc.cluster.local
     # if not a FQDN then Istio assumes the namespace of the THIS VirtualService
-    - "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
+    # - "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
     - "*"
   http:
-  - route:
+  -
+    {{ if .Values.service.match.uri.prefix }}
+    match:
+    - uri:
+        prefix:  {{ .Values.service.match.uri.prefix }}
+    {{end}}
+    route:
     - destination:
         host: "{{ .Values.service.name }}.{{ .Values.service.namespace }}.svc.cluster.local"
         subset: stable
