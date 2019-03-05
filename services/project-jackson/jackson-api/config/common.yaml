@@ -7,8 +7,8 @@ config:
     canaryWeight: 50
     stableWeight: 50
     match:
-      - uri:
-          prefix: "/api"
+      uri:
+        prefix: "/api"
   appName: spring-boot-api
   enableVirtualService: true
   enableDestinationRule: true

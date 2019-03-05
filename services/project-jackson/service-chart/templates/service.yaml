@@ -60,12 +60,13 @@ spec:
         port: 
           number: {{ .Values.service.port }}
       weight: {{ if .Values.service.canaryWeight }} {{ .Values.service.canaryWeight}} {{ else }} 0 {{ end }}
-    {{ if .Values.service.match }}
+    {{ if .Values.service.match }} # WARNING: THIS IS REALLY MESSY. FIX!
     match:
-    {{- range .Values.service.match }}
-    - {{ . }}
-    # - uri:
-    #     prefix:  {{ .Values.service.match.uri.prefix }}
-    {{ end }}
+    {{if .Values.service.match.uri }}
+    - uri:
+      {{ if .Values.service.match.uri.prefix }}
+        prefix: {{ .Values.service.match.uri.prefix }} 
+      {{end}}
+    {{end}}
     {{end}}
 {{- end }}
